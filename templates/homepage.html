@@ -11,8 +11,8 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>{{title}}</h1>
-    <h1>Hello, world! bro</h1>
+    <center><h1>{{title}}</h1>
+    <h1>We are working. </h1></center>
     <div class='container'>
       <div class='row'>
         <div class='col'>
@@ -20,6 +20,14 @@
         </div>
 
       </div>
+      {%if request.user.is_authenticated %}
+      <div class='row'>
+        <div class='col'>
+          <h1>Premium</h1>
+          {{premium_content}}
+        </div>
+      </div>
+      {% endif %}
     </div>
 
     <!-- Optional JavaScript -->
