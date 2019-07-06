@@ -7,7 +7,7 @@ def home_page(request):
         "title":"Hello World!",
         "content":"Welcome to the home page!"
     }
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         context["premium_content"]="Yeeeaaaahhhhhhh"
     return render(request,"homepage.html",context)
 def contact_page(request):
@@ -20,7 +20,7 @@ def contact_page(request):
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
     return render(request,"contact/view.html",context)
-def about_page():
+def about_page(request):
     context={
         "title":"About!",
         "content":"Know all about me bro!"
